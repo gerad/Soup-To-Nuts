@@ -1,0 +1,80 @@
+Help on module SoupToNuts:
+
+NAME
+    SoupToNuts
+
+FILE
+    /Users/gerad/Development/soup_to_nuts/SoupToNuts.py
+
+DESCRIPTION
+    # from google.appengine.api import urlfetch
+    # from urllib import urlencode
+    # from urlparse import urljoin
+    # from BeautifulSoup import BeautifulSoup
+    # import re
+
+CLASSES
+    __builtin__.object
+        SoupToNuts
+    
+    class SoupToNuts(__builtin__.object)
+     |  A mechanize-inspired screenscraping utility for Google App Engine.
+     |  
+     |  Public Attributes:
+     |  url -- the current page url
+     |  response -- the raw response from google's urlfetch
+     |  page -- a BeautifulSoup object for the current page
+     |  cookies -- a string representing the current cookies
+     |  
+     |  Example:
+     |  nuts = SoupToNuts('http://www.google.com')
+     |  puts nuts.page.prettify()
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, url=None)
+     |      Arguments
+     |      url -- an initial url to fetch
+     |  
+     |  fetch(self, url, data=None, raw=False)
+     |      Fetch a url using Google's urlfetch library.  Does a GET by default
+     |      and a POST if data is supplied.
+     |      
+     |      Arguments:
+     |      url -- the url to visit, can be a url fragment
+     |      data -- the data to send (via POST)
+     |      raw -- whether to parse the incoming response with BeautifulSoup
+     |  
+     |  follow(self, link)
+     |      Follow a link on the page.
+     |      
+     |      Arguments:
+     |      link -- a BeautifulSoup link element from the page
+     |      
+     |      Example:
+     |      nuts.follow(nuts.page.a)
+     |  
+     |  submit(self, form, values)
+     |      Submit a form on the page with the passed in values.
+     |      
+     |      Arguments:
+     |      form -- a BeautifulSoup form element on the page
+     |      values -- a dict of key-value pairs for the form items
+     |      
+     |      Example:
+     |      nuts.submit(nuts.page.find('form', id='login_form'),
+     |        {'email': 'steve@apple.com', 'password': 'i!<3flash'})
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FUNCTIONS
+    set_trace()
+
+
